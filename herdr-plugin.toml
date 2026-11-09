@@ -1,0 +1,20 @@
+id = "homur.recap"
+name = "Recap"
+version = "0.1.0"
+min_herdr_version = "0.9.0"
+description = "Popup with a short recap of what each Claude Code agent was doing"
+platforms = ["linux", "macos"]
+
+[[panes]]
+id = "recap"
+title = "Agent recap"
+placement = "popup"
+width = "90%"
+height = "90%"
+command = ["python3", "-I", "recap.py"]
+
+[[actions]]
+id = "open"
+title = "Show agent recap"
+contexts = ["workspace"]
+command = ["sh", "-c", "exec \"${HERDR_BIN_PATH:-herdr}\" plugin pane open --plugin \"$HERDR_PLUGIN_ID\" --entrypoint recap"]
