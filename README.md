@@ -5,23 +5,9 @@ A [herdr](https://herdr.dev) plugin that answers "what was that agent doing agai
 Press one key and a popup lists every Claude Code agent in your herdr session,
 with a short recap of what it was working on and what comes next.
 
-```
-Agent recap  3 Claude agent(s)
+![The recap popup, listing four Claude Code agents with their status and a short recap](docs/screenshot.png)
 
-1  ● api-server  needs you  2 min ago  · Rate limiter tests
-   Recap:  Adding a token-bucket rate limiter to the public API; tests pass
-           locally. Next: confirm the limits for the free tier.
-
-2  ● web  idle  25 min ago  · Checkout page layout
-   Recap:  Reworked the checkout page for mobile; the form now fits on one
-           screen. Next: review the screenshots and approve.
-
-3  ● docs  working  just now  · Migration guide
-   You:    can you write the v2 migration guide
-   Claude: Sure. I will start with the breaking changes...
-
-Press 1-3 to jump to an agent. Any other key closes.
-```
+<sub>Demo data. Rebuild the picture with `docs/make_demo.py`.</sub>
 
 - Agents that need you come first, then done, working, and idle ones.
 - Press a number to jump to that agent's pane.
