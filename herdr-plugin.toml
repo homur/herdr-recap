@@ -1,8 +1,8 @@
 id = "homur.recap"
 name = "Recap"
-version = "0.1.0"
+version = "0.2.0"
 min_herdr_version = "0.9.0"
-description = "Popup with a short recap of what each Claude Code agent was doing"
+description = "Keep track of your agents: a recap popup, and a newest-first Agents sidebar"
 platforms = ["linux", "macos"]
 
 [[panes]]
@@ -18,3 +18,12 @@ id = "open"
 title = "Show agent recap"
 contexts = ["workspace"]
 command = ["sh", "-c", "exec \"${HERDR_BIN_PATH:-herdr}\" plugin pane open --plugin \"$HERDR_PLUGIN_ID\" --entrypoint recap"]
+
+[[actions]]
+id = "toggle-sort"
+title = "Agents sidebar: newest first on/off"
+contexts = ["workspace"]
+command = ["python3", "-I", "sort.py", "toggle"]
+
+[[startup]]
+command = ["python3", "-I", "sort.py", "apply"]
